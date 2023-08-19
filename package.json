@@ -32,9 +32,19 @@
     "viewsContainers": {
       "activitybar": [
         {
-          "id": "conversation",
+          "id": "conversationView",
           "title": "Conversation",
-          "icon": "resources/icon.png"
+          "icon": "resources/small_logo.png"
+        }
+      ]
+    },
+    "views": {
+      "conversationView": [
+        {
+          "id": "conversation.view",
+          "name": "Conversation",
+          "description": "Chatbot interface for LLMs on HuggingFace",
+          "type": "webview"
         }
       ]
     }
