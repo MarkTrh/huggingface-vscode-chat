@@ -1,4 +1,4 @@
-import { window, commands, ExtensionContext } from "vscode";
+import { window, commands, ExtensionContext, workspace } from "vscode";
 import { getChatbotExtensionContext } from "./globals/extensionContext";
 import { ConversationViewProvider } from './conversation/ConversationViewProvider';
 
@@ -7,10 +7,13 @@ export const SET_API_TOKEN_COMMAND = "huggingface-vscode-chat:setApiToken";
 export function registerCommands(
   context: ExtensionContext
 ): void {
+  const config = workspace.getConfiguration('huggingface-vscode-chat');
+
   context.subscriptions.push(
     commands.registerCommand(SET_API_TOKEN_COMMAND, setApiToken)
   );
 
+  console.log(config);
   const provider = new ConversationViewProvider();
 
   context.subscriptions.push(

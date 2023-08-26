@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 
-let chatbotExtensionContext: vscode.ExtensionContext | null = null;
+let chatbotExtensionContext: vscode.ExtensionContext;
 
 export function setChatbotExtensionContext(
   context: vscode.ExtensionContext
@@ -8,6 +8,6 @@ export function setChatbotExtensionContext(
     chatbotExtensionContext = context;
 }
 
-export function getChatbotExtensionContext(): vscode.ExtensionContext | null {
+export function getChatbotExtensionContext(): vscode.ExtensionContext {
   return chatbotExtensionContext;
 }
